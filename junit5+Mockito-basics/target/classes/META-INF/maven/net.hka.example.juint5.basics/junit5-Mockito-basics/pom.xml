@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.hka.example.juint5.basics</groupId>
+	<artifactId>junit5-Mockito-basics</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>junit5-basics</name>
+	<description>Code accompanying the JUnit 5 Basics with Mockito</description>
+
+	<properties>
+		<maven.compiler.target>8</maven.compiler.target>
+		<maven.compiler.source>8</maven.compiler.source>
+		
+		<junit.jupiter.version>5.6.2</junit.jupiter.version>
+		
+		<mockito.version>2.0.2-beta</mockito.version>
+		<mockito-junit-jupiter.version>3.3.3</mockito-junit-jupiter.version>
+		
+		<hamcrest-library.version>1.3</hamcrest-library.version>
+		
+		<maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
+	</properties>
+
+	<dependencies>
+		<!-- Junit 5 dependency -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!--<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency> -->
+		
+		
+		<!-- Mockito dependencies -->
+		<!-- 		
+		<dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+         -->
+        <!-- Mockito provides an implementation for JUnit5 extensions, 
+        	 and for Mockito annotations i.e @Mock to work fine with Junit 5
+        -->
+        <dependency>
+		    <groupId>org.mockito</groupId>
+		    <artifactId>mockito-junit-jupiter</artifactId>
+		    <version>${mockito-junit-jupiter.version}</version>
+		    <scope>test</scope>
+		</dependency>
+		
+		
+		<!-- Hamcrest dependency -->
+        <dependency>
+		    <groupId>org.hamcrest</groupId>
+		    <artifactId>hamcrest-library</artifactId>
+		    <version>${hamcrest-library.version}</version>
+		    <scope>test</scope>
+		</dependency>
+		
+	</dependencies>
+	
+	
+	<build>
+		<plugins>
+			<!-- Updating to latest Java version -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+				
+			<!-- Add this plugin to make the tests run and integrate with CI/CD pipeline -->	
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven-surefire-plugin.version}</version>
+				<!-- <dependencies>
+			        <dependency>
+			             <groupId>org.junit.platform</groupId>
+			             <artifactId>junit-platform-surefire-provider</artifactId>
+			             <version>1.0.1</version>
+			         </dependency>
+     			</dependencies> -->
+			</plugin>
+			
+		</plugins>
+		<finalName>junit5-basics</finalName>
+	</build>
+</project>

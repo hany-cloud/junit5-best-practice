@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: net.hka.example.junit5.basics.MathUtilsTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s - in net.hka.example.junit5.basics.MathUtilsTest
